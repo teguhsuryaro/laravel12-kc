@@ -7,6 +7,13 @@
     <title>siswa</title>
 </head>
 <body>
-    <h1>siswa</h1>
+    <h1>Daftar Siswa</h1>
+    <ul>
+    @foreach ($data as $items)
+        <li>
+            <h3>{{ $items['nama'] }} - {{ $items['nilai'] }}</h3>
+        </li>
+    @endforeach
+    </ul>
 </body>
 </html>
