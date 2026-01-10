@@ -18,9 +18,9 @@ Route::get('/contact', function () {
 
 Route::get('/siswa', function () {
     $var = [
-        ['nama' => 'Budi', 'nilai' => 80, 'id' => 001],
-        ['nama' => 'Intan', 'nilai' => 97, 'id' => 002],
-        ['nama' => 'Citra', 'nilai' => 89, 'id' => 002]
+        ['nama' => 'Teguh Surya', 'nilai' => 80, 'id' => 001],
+        ['nama' => 'Amelia Safitri', 'nilai' => 97, 'id' => 002],
+        ['nama' => 'Tea', 'nilai' => 89, 'id' => 002]
     ];
     return view('siswa.index', compact('var'), ['data' => 'Siswa']);
 });

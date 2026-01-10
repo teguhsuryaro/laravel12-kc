@@ -1,3 +1,3 @@
-@props(['active' => '888'])
+@props(['active' => false])
 
 <a {{ $attributes }}>{{ $slot }} {{ $active }}</a>
