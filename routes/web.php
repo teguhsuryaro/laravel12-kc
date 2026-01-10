@@ -3,28 +3,28 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['data' => 'Home Page']);
 });
 
 Route::get('/about', function () {
     $nama = 'Teguh Ganteng';
     $umur = 7;
-    return view('about', compact('nama', 'umur'));
+    return view('about', compact('nama', 'umur'), ['data' => 'About']);
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact', ['data' => 'Contact']);
 });
 
 Route::get('/siswa', function () {
-    $data = [
+    $var = [
         ['nama' => 'Budi', 'nilai' => 80, 'id' => 001],
         ['nama' => 'Intan', 'nilai' => 97, 'id' => 002],
         ['nama' => 'Citra', 'nilai' => 89, 'id' => 002]
     ];
-    return view('siswa.index', compact('data'));
+    return view('siswa.index', compact('var'), ['data' => 'Siswa']);
 });
 
 Route::get('/siswa/{id}', function ($id) {
-    return view('siswa.show', ['id' => $id]);
+    return view('siswa.show', ['id' => $id], ['data' => 'Detail Siswa']);
 });
