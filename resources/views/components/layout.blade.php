@@ -22,22 +22,22 @@
             <nav aria-label="Global" class="hidden md:block">
                 <ul class="flex items-center gap-6 text-l">
                     <li>
-                        <x-nav-link class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75" href="/">
+                        <x-nav-link href="/" :active="request()->is('/')">
                         Home
                         </x-nav-link>
                     </li>
                     <li>
-                        <x-nav-link class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75" href="/about">
+                        <x-nav-link href="/about" :active="request()->is('about')">
                             About
                         </x-nav-link>
                     </li>
                     <li>
-                        <x-nav-link class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75" href="/contact">
+                        <x-nav-link href="/contact" :active="request()->is('contact')">
                             Contact
                         </x-nav-link>
                     </li>
                     <li>
-                        <x-nav-link class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75" href="/siswa">
+                        <x-nav-link href="/siswa" :active="request()->is('siswa')">
                             Daftar Siswa
                         </x-nav-link>
                     </li>
