@@ -27,18 +27,13 @@
                         </x-nav-link>
                     </li>
                     <li>
-                        <x-nav-link href="/about" :active="request()->is('about')">
-                            About
+                        <x-nav-link href="{{ route('siswa.create') }}" :active="request()->routeIs('siswa.create')">
+                            Create Siswa
                         </x-nav-link>
                     </li>
                     <li>
-                        <x-nav-link href="/contact" :active="request()->is('contact')">
-                            Contact
-                        </x-nav-link>
-                    </li>
-                    <li>
-                        <x-nav-link href="/siswa" :active="request()->is('siswa')">
-                            Daftar Siswa
+                        <x-nav-link href="{{ route('siswa.index') }}" :active="request()->routeIs('siswa.index')">
+                            Siswa
                         </x-nav-link>
                     </li>
                 </ul>
@@ -66,11 +61,11 @@
         </div>
     </header>
 
-<main class="py-10 px-10 md:px-25">
+<main class="mx-auto max-w-7xl items-center gap-8 px-4 my-10 sm:px-6 lg:px-8">
     {{ $slot }}
 </main>
 
-<footer class="py-10 px-10 md:px-25">
+<footer class="mx-auto max-w-7xl items-center gap-8 px-4 my-10 sm:px-6 lg:px-8">
     ini footer dari <span>{{ $footer }}</span>
 </footer>
 
