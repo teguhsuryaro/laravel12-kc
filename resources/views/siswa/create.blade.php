@@ -1,7 +1,7 @@
 <x-layout>
     <h1 class="text-xl mb-5 font-bold">Create siswa</h1>
 
-    <form action="#" method="POST" class="space-y-4">
+    <form action="{{ route('siswa.store') }}" method="POST" class="space-y-4">
 
         @csrf
         {{-- Nama --}}
@@ -13,10 +13,13 @@
                 type="text"
                 id="nama"
                 name="nama"
-                required
                 class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm
                        focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                value="{{ old('nama') }}"
             />
+            @error('nama')
+                <div class="text-red-600 text-sm">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- Tanggal Lahir --}}
@@ -30,7 +33,11 @@
                 name="tanggal_lahir"
                 class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm
                        focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                value="{{ old('tanggal_lahir') }}"
             />
+            @error('tangagal_lahir')
+                <div class="text-red-600 text-sm">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- Jurusan --}}
@@ -44,7 +51,11 @@
                 name="jurusan"
                 class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm
                        focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                value="{{ old('jurusan') }}"
             />
+            @error('jurusan')
+                <div class="text-red-600 text-sm">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- Nilai --}}
@@ -58,7 +69,11 @@
                 name="nilai"
                 class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm
                        focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+                value="{{ old('nilai') }}"
             />
+            @error('nilai')
+                <div class="text-red-600 text-sm">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- Mentor --}}
@@ -67,29 +82,33 @@
                 Mentor
             </label>
             <select
-                id="mentor"
-                name="mentor"
+                id="mentor_id"
+                name="mentor_id"
                 class="mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm
                        focus:ring-blue-500 focus:border-blue-500 border-gray-300"
             >
-                <option value="">-- Pilih Mentor --</option>
+                <option value="{{ old('mentor_id') }}">-- Pilih Mentor --</option>
                 @foreach ($mentors as $mentor)
                 <option value="{{ $mentor->id }}">{{ $mentor->nama }}</option>
                     
                 @endforeach
             </select>
+            @error('mentor_id')
+                <div class="text-red-600 text-sm">{{ $message }}</div>
+            @enderror
         </div>
 
         {{-- Button --}}
         <div class="pt-4">
             <button
                 type="submit"
-                class="px-6 py-2 bg-teal-600 text-white rounded-lg
+                class="mt-1 block w-full px-4 py-2 border shadow-sm bg-teal-600 text-white rounded-lg
                        hover:bg-teal-700 transition"
             >
                 Simpan
             </button>
         </div>
+
     </form>
 
     <x-slot:footer>

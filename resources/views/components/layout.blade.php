@@ -9,6 +9,14 @@
 </head>
 <body>
 
+    @if (session('success'))
+        <div id="flash" class="p-4 bg-green-50 text-green-500 text-center font-bold">
+            <p>
+                {{ session('success') }}
+            </p>
+        </div>
+    @endif
+
     <header class="bg-white dark:bg-gray-900">
         <div class="mx-auto flex h-16 max-w-7xl items-center gap-8 px-4 sm:px-6 lg:px-8">
             <a class="block text-teal-600 dark:text-teal-300" href="#">
@@ -66,7 +74,7 @@
 </main>
 
 <footer class="mx-auto max-w-7xl items-center gap-8 px-4 my-10 sm:px-6 lg:px-8">
-    ini footer dari <span>{{ $footer }}</span>
+    ini footer dari <span><b>{{ $footer }}</b></span>
 </footer>
 
 </body>
